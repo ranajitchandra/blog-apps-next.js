@@ -1,36 +1,69 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# My Blog App
 
-## Getting Started
+A full-featured **Next.js blog application** with **NextAuth authentication**, **MongoDB database**, **admin dashboard**, and **category-based posts**. Users can browse posts, authors can create posts, and admins can manage users, posts, and categories.  
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Features
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Public Features
+- View all blog posts with pagination.
+- View post details.
+- Filter posts by category.
+- Search posts by title/content (optional to implement).
+- Responsive UI with TailwindCSS.
+- Loading indicators and error handling.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+### User / Author Features
+- Register and login via **NextAuth**.
+- Authors can create, edit, and delete their own posts.
+- Authors have access to a **dashboard** showing their posts.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Admin Features
+- Manage all posts (view, edit, delete).
+- Manage categories (add, edit, delete).
+- Manage users (view roles, delete users if necessary).
+- Access to admin dashboard (`/admin` routes).
+- Role-based access control via middleware.
 
-## Learn More
+### Post Features
+- Title, content, and category assignment.
+- Featured image support.
+- URL-friendly slug generation.
+- Likes (optional to implement).
+- Published/unpublished posts.
 
-To learn more about Next.js, take a look at the following resources:
+### Tech Stack
+- **Next.js 15** (App Router, React 19)
+- **NextAuth.js** for authentication
+- **MongoDB** for database
+- **TailwindCSS** for styling
+- **SweetAlert2** for alerts and confirmations
+- **Vercel** for deployment
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Project Structure
 
-## Deploy on Vercel
+/app
+/api
+/auth/[...nextauth]/route.js
+/posts/route.js
+/posts/[id]/route.js
+/posts/with-categories/route.js
+/admin/users/[id]/route.js
+/admin
+/dashboard/page.jsx
+/posts/page.jsx
+/categories/page.jsx
+/dashboard/page.jsx
+/create-post/page.jsx
+/lib
+mongodb.js
+/components
+Navbar.js
+Loading.js
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+
