@@ -57,7 +57,7 @@ export default function EditPostPage() {
             const data = await res.json();
             if (res.ok) {
                 Swal.fire("Success", data.message, "success").then(() => {
-                    router.push("/dashboard");
+                    router.push("/dashboard/author/myPost");
                 });
             } else {
                 Swal.fire("Error", data.error || "Failed to update post", "error");

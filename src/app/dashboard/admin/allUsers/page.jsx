@@ -73,7 +73,7 @@ export default function AdminDashboard() {
     if (!session || session.user.role !== "admin") return <div className="text-center py-20 text-red-600">Access Denied</div>;
 
     return (
-        <div className="max-w-6xl mx-auto px-4 py-10">
+        <div className="max-w-6xl mx-auto px-4">
             <h1 className="text-3xl font-bold mb-6">All Users</h1>
 
             {loading ? (
